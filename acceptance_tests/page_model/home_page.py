@@ -7,11 +7,11 @@ from acceptance_tests.page_model.base_page import BasePage
 class HomePage(BasePage):
 # __init__ method also inherited from BasePage
 
-    def homeUrl(self):
-        return self.baseUrl() + "/"
+    def home_URL(self):
+        return self.base_URL() + "/"
 
-    def getPricingLink(self):
+    def get_pricing_link(self):
         return self.driver.find_element(*HomePageLocators._pricing_link)
 
-    def getHomeHeader(self):
+    def get_home_header(self):
         return self.driver.find_element(*HomePageLocators._home_header)

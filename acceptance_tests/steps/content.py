@@ -10,15 +10,14 @@ use_step_matcher('re')
 @then("The header is present on page")
 def step_impl(context):
     pp = PricingPage(context.driver)
-    assert pp.pricingHeader().is_displayed()
-
+    assert pp.pricing_header().is_displayed()
 
 @step('The pricing header has content: "(.*)"')
 def step_impl(context, content):
     pp = PricingPage(context.driver)
-    assert pp.pricingHeader().text == content
+    assert pp.pricing_header().text == content
 
 @step('The page title has content: "(.*)"')
 def step_impl(context, content):
     bp = BasePage(context.driver)
-    assert content in bp.getTitle()
+    assert content in bp.get_title()

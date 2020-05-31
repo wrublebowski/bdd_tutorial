@@ -5,5 +5,5 @@ from acceptance_tests.locators.login_locators import LoginPageLocators
 class LoginPage(BasePage):
 # __init__ method also inherited from BasePage
 
-    def loginUrl(self):
+    def login_URL(self):
         return "https://app.pushpushgo.com/login?language=en"
