@@ -38,7 +38,7 @@ def step_impl(context):
     expected_url = pp.pricing_URL()
     assert context.driver.current_url == expected_url
 
-@then("Im on login page")
+@step("Im on login page")
 def step_impl(context):
     lp = LoginPage(context.driver)
     expected_url = lp.login_URL()
