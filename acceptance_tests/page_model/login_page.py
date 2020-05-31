@@ -14,5 +14,13 @@ class LoginPage(BasePage):
     def get_password_field(self):
         return self.driver.find_element(*LoginPageLocators._password_field)
 
-    # def click_login(self):
-    #     self.click_element(*LoginPageLocators._login_link)
+    def sign_in(self, email, password):
+        '''
+        send data to email_field and password_field
+        click on login button
+        :param email: str
+        :param password: str
+        '''
+        self.get_email_field().send_keys(email)
+        self.get_password_field().send_keys(password)
+        self.click_element(*LoginPageLocators._login_btn)

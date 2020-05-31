@@ -37,17 +37,9 @@ def step_impl(context, distance):
     bp = BasePage(context.driver)
     bp.scroll_page(distance)
 
-@then('I enter email "(.*)" and password "(.*)"')
+@then('Login with email "(.*)" and password "(.*)"')
 def step_impl(context, email, password):
+    # bp = BasePage(context.driver)
     lp = LoginPage(context.driver)
-    bp = BasePage(context.driver)
-
-    bp.wait_for_element(LoginPageLocators._email_field)
-    lp.get_email_field().send_keys(email)
-    lp.get_password_field().send_keys(password)
-
-@step('I click on login to submit')
-def step_impl(context):
-    bp = BasePage(context.driver)
-    bp.wait_for_element(LoginPageLocators._login_link)
-    bp.click_element(*LoginPageLocators._login_link)
+    lp.wait_for_element(LoginPageLocators._email_field)
+    lp.sign_in(email, password)

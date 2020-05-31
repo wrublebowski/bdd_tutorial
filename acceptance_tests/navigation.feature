@@ -1,6 +1,6 @@
 Feature: Test navigation through pages
 
-  Scenario: Go from homepage to pricing
+  Scenario: Go from homepage to pricing and try loging in
     Given I start on the homepage
     When I click on navigation link with text: "Pricing"
     Then Im in pricing page
@@ -17,5 +17,4 @@ Feature: Test navigation through pages
     Given I start on the homepage
     When I click on navigation link with text: "Sign in"
     And Im on login page
-    Then I enter email "mietek@nagietek.pl" and password "hujemuje"
-    And I click on login to submit
+    Then Login with email "janko@janeczko.pl" and password "czypamietasz"
